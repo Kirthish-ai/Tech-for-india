@@ -2,9 +2,9 @@
 
 
 ## Project Overview
-* **Purpose: Educational platform for Teach For India
-* **Main functions: Fellowship applications, donations, program information
-* **Target audience: Potential fellows, donors, and stakeholders
+* Purpose: Educational platform for Teach For India
+* Main functions: Fellowship applications, donations, program information
+* Target audience: Potential fellows, donors, and stakeholders
 
 
 ## File Structure
