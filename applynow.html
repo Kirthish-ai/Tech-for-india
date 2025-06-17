@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now - Teach For India</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <span class="logo-text">TEACH<span class="logo-for">FOR</span>INDIA</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="impact.html">Our Impact</a>
+                <a href="join.html">Join Us</a>
+                <a href="donate.html">Donate</a>
+                <a href="contact.html">Contact</a>
+                <a href="applynow.html" class="active cta-button">Apply Now</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-modern" style="background-image: url('./info.png');">
+            <div class="hero-image-overlay"></div>
+            <div class="hero-modern-content">
+                <h1 class="hero-modern-title">Apply for the Fellowship</h1>
+                <p class="hero-modern-desc">Join our mission to transform education in India</p>
+            </div>
+        </section>
+        <!-- Application Process Section -->
+        <section class="impact-section-modern">
+            <div class="impact-container">
+                <h2>Application Process</h2>
+                <div class="impact-cards">
+                    <div class="impact-card">
+                        <div class="impact-icon"><i class="fas fa-file-alt"></i></div>
+                        <h3>Online Application</h3>
+                        <p>Complete the application form and submit required documents</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon"><i class="fas fa-phone"></i></div>
+                        <h3>Phone Interview</h3>
+                        <p>Initial screening interview with our selection team</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon"><i class="fas fa-users"></i></div>
+                        <h3>Assessment Day</h3>
+                        <p>Participate in group activities and personal interview</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Final Selection</h3>
+                        <p>Receive your selection decision and placement details</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Eligibility Section -->
+        <section id="eligibility" class="fellowship-section-modern">
+            <div class="fellowship-modern-container">
+                <div class="fellowship-modern-content" style="width:100%">
+                    <h2 class="centered-heading">Eligibility Criteria</h2>
+                    <div class="fellowship-modern-features">
+                        <div class="feature">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Education</h3>
+                            <p>Bachelor's degree in any discipline, minimum 50% marks, completed degree by June 2024</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-user"></i>
+                            <h3>Age & Citizenship</h3>
+                            <p>Indian citizen or OCI card holder, age 18-35, no prior teaching experience required</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-language"></i>
+                            <h3>Language Skills</h3>
+                            <p>Proficiency in English, basic knowledge of local language, strong communication skills</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fellowship Benefits Section -->
+        <section class="impact-section-modern">
+            <div class="impact-container">
+                <h2>Fellowship Benefits</h2>
+                <div class="impact-cards">
+                    <div class="impact-card">
+                        <div class="impact-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3>Leadership Development</h3>
+                        <p>Intensive training and mentorship to develop leadership skills</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon"><i class="fas fa-rupee-sign"></i></div>
+                        <h3>Competitive Salary</h3>
+                        <p>Monthly stipend of ₹25,000 plus additional benefits</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Network Access</h3>
+                        <p>Join a network of 4,500+ alumni across various sectors</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon"><i class="fas fa-certificate"></i></div>
+                        <h3>Certification</h3>
+                        <p>Post-graduate diploma in Education Leadership</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Application Form Section -->
+        <section id="application-form" class="stories-section-modern">
+            <div class="stories-container">
+                <h2>Application Form</h2>
+                <div class="stories-modern-grid">
+                    <div class="story-modern-card" style="max-width: 100%; text-align: left;">
+                        <div class="story-modern-content">
+                            <div class="form-header">
+                                <h3>Join Our Fellowship</h3>
+                                <p>Fill out the form below to start your journey with Teach For India.</p>
+                            </div>
+                            <div class="form-card">
+                                <form id="fellowshipForm">
+                                    <div class="form-section">
+                                        <h3>Personal Information</h3>
+                                        <div class="form-group">
+                                            <label for="fullName">Full Name</label>
+                                            <input type="text" id="fullName" name="fullName" required>
+                                            <div class="error-message" id="fullNameError"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" id="email" name="email" required>
+                                            <div class="error-message" id="emailError"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Phone Number</label>
+                                            <input type="tel" id="phone" name="phone" required>
+                                            <div class="error-message" id="phoneError"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dob">Date of Birth</label>
+                                            <input type="date" id="dob" name="dob" required>
+                                            <div class="error-message" id="dobError"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-section">
+                                        <h3>Education Details</h3>
+                                        <div class="form-group">
+                                            <label for="university">University/College</label>
+                                            <input type="text" id="university" name="university" required>
+                                            <div class="error-message" id="universityError"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="degree">Degree</label>
+                                            <input type="text" id="degree" name="degree" required>
+                                            <div class="error-message" id="degreeError"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="graduationYear">Year of Graduation</label>
+                                            <input type="number" id="graduationYear" name="graduationYear" min="2020" max="2024" required>
+                                            <div class="error-message" id="graduationYearError"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="percentage">Percentage/CGPA</label>
+                                            <input type="number" id="percentage" name="percentage" step="0.01" min="0" max="100" required>
+                                            <div class="error-message" id="percentageError"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-section">
+                                        <h3>Additional Information</h3>
+                                        <div class="form-group">
+                                            <label for="city">Preferred City</label>
+                                            <select id="city" name="city" required>
+                                                <option value="">Select a city</option>
+                                                <option value="mumbai">Mumbai</option>
+                                                <option value="delhi">Delhi</option>
+                                                <option value="bangalore">Bangalore</option>
+                                                <option value="chennai">Chennai</option>
+                                                <option value="hyderabad">Hyderabad</option>
+                                                <option value="pune">Pune</option>
+                                            </select>
+                                            <div class="error-message" id="cityError"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="source">How did you hear about us?</label>
+                                            <select id="source" name="source" required>
+                                                <option value="">Select an option</option>
+                                                <option value="social">Social Media</option>
+                                                <option value="friend">Friend/Family</option>
+                                                <option value="website">Website</option>
+                                                <option value="event">Event/Campus Drive</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                            <div class="error-message" id="sourceError"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="statement">Statement of Purpose</label>
+                                            <textarea id="statement" name="statement" rows="6" required placeholder="Tell us why you want to join Teach For India and what impact you hope to create (500 words max)"></textarea>
+                                            <div class="error-message" id="statementError"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-section">
+                                        <h3>Document Upload</h3>
+                                        <div class="form-group">
+                                            <label for="resume">Resume/CV</label>
+                                            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                                            <div class="error-message" id="resumeError"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="marksheet">Latest Marksheet</label>
+                                            <input type="file" id="marksheet" name="marksheet" accept=".pdf" required>
+                                            <div class="error-message" id="marksheetError"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="terms" name="terms" required>
+                                        <label for="terms">I confirm that all information provided is accurate and I agree to the terms and conditions</label>
+                                        <div class="error-message" id="termsError"></div>
+                                    </div>
+                                    <button type="submit" class="primary-button">Submit Application</button>
+                                </form>
+                            </div>
+                            <div class="form-footer">
+                                <p>For any questions, please contact us at <a href="mailto:info@teachforindia.org">info@teachforindia.org</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Teach For India is a non-profit organization that aims to eliminate educational inequity in India by building a movement of leaders.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@teachforindia.org</p>
+                <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Teach For India. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('fellowshipForm');
+            const fields = {
+                fullName: { input: document.getElementById('fullName'), error: document.getElementById('fullNameError') },
+                email: { input: document.getElementById('email'), error: document.getElementById('emailError') },
+                phone: { input: document.getElementById('phone'), error: document.getElementById('phoneError') },
+                dob: { input: document.getElementById('dob'), error: document.getElementById('dobError') },
+                university: { input: document.getElementById('university'), error: document.getElementById('universityError') },
+                degree: { input: document.getElementById('degree'), error: document.getElementById('degreeError') },
+                graduationYear: { input: document.getElementById('graduationYear'), error: document.getElementById('graduationYearError') },
+                percentage: { input: document.getElementById('percentage'), error: document.getElementById('percentageError') },
+                city: { input: document.getElementById('city'), error: document.getElementById('cityError') },
+                source: { input: document.getElementById('source'), error: document.getElementById('sourceError') },
+                statement: { input: document.getElementById('statement'), error: document.getElementById('statementError') },
+                resume: { input: document.getElementById('resume'), error: document.getElementById('resumeError') },
+                marksheet: { input: document.getElementById('marksheet'), error: document.getElementById('marksheetError') },
+                terms: { input: document.getElementById('terms'), error: document.getElementById('termsError') }
+            };
+
+            const validationRules = {
+                fullName: {
+                    validate: (value) => value.trim().length >= 3 && /^[a-zA-Z\s]+$/.test(value),
+                    message: 'Full Name must be at least 3 characters and contain only letters.'
+                },
+                email: {
+                    validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+                    message: 'Please enter a valid email address.'
+                },
+                phone: {
+                    validate: (value) => /^[6-9]\d{9}$/.test(value),
+                    message: 'Please enter a valid 10-digit Indian phone number (starts with 6-9).'
+                },
+                dob: {
+                    validate: (value) => {
+                        const birthDate = new Date(value);
+                        const today = new Date();
+                        const age = today.getFullYear() - birthDate.getFullYear();
+                        const m = today.getMonth() - birthDate.getMonth();
+                        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                            return age - 1 >= 18 && age - 1 <= 35;
+                        }
+                        return age >= 18 && age <= 35;
+                    },
+                    message: 'You must be between 18 and 35 years old.'
+                },
+                university: {
+                    validate: (value) => value.trim().length > 0,
+                    message: 'University/College is required.'
+                },
+                degree: {
+                    validate: (value) => value.trim().length > 0,
+                    message: 'Degree is required.'
+                },
+                graduationYear: {
+                    validate: (value) => {
+                        const year = parseInt(value);
+                        return year >= 2020 && year <= 2024;
+                    },
+                    message: 'Graduation Year must be between 2020 and 2024.'
+                },
+                percentage: {
+                    validate: (value) => {
+                        const percentage = parseFloat(value);
+                        return percentage >= 0 && percentage <= 100;
+                    },
+                    message: 'Percentage/CGPA must be between 0 and 100.'
+                },
+                city: {
+                    validate: (value) => value.trim() !== '',
+                    message: 'Preferred City is required.'
+                },
+                source: {
+                    validate: (value) => value.trim() !== '',
+                    message: 'How you heard about us is required.'
+                },
+                statement: {
+                    validate: (value) => value.trim().length >= 50 && value.trim().split(/\s+/).length <= 500,
+                    message: 'Statement of Purpose must be between 50 and 500 words.'
+                },
+                resume: {
+                    validate: (file) => file && ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(file.type) && file.size <= 5 * 1024 * 1024, // 5MB
+                    message: 'Please upload a Resume/CV (PDF, DOC, DOCX) under 5MB.'
+                },
+                marksheet: {
+                    validate: (file) => file && file.type === 'application/pdf' && file.size <= 2 * 1024 * 1024, // 2MB
+                    message: 'Please upload a Marksheet (PDF) under 2MB.'
+                },
+                terms: {
+                    validate: (checked) => checked,
+                    message: 'You must agree to the terms and conditions.'
+                }
+            };
+
+            const validateField = (fieldKey) => {
+                const field = fields[fieldKey];
+                let isValid = true;
+                let value;
+
+                if (field.input.type === 'checkbox') {
+                    value = field.input.checked;
+                } else if (field.input.type === 'file') {
+                    value = field.input.files[0];
+                } else {
+                    value = field.input.value;
+                }
+
+                if (field.input.hasAttribute('required') && !value && field.input.type !== 'file') {
+                    isValid = false;
+                    field.error.textContent = `${field.input.previousElementSibling.textContent.replace(':', '')} is required.`;
+                } else if (value && validationRules[fieldKey] && !validationRules[fieldKey].validate(value)) {
+                    isValid = false;
+                    field.error.textContent = validationRules[fieldKey].message;
+                } else {
+                    field.error.textContent = '';
+                }
+
+                field.input.classList.toggle('invalid', !isValid);
+                return isValid;
+            };
+
+            form.addEventListener('submit', function(event) {
+                let formIsValid = true;
+                for (const key in fields) {
+                    if (!validateField(key)) {
+                        formIsValid = false;
+                    }
+                }
+
+                if (!formIsValid) {
+                    event.preventDefault();
+                    alert('Please correct the errors in the form.');
+                } else {
+                    alert('Form submitted successfully! (This is a demo, no data is saved.)');
+                    // In a real application, you would send data to a backend here.
+                }
+            });
+
+            // Add real-time validation on blur for text/number/date/email/tel inputs
+            for (const key in fields) {
+                if (fields[key].input.type !== 'file' && fields[key].input.type !== 'checkbox' && fields[key].input.tagName !== 'SELECT') {
+                    fields[key].input.addEventListener('blur', () => validateField(key));
+                }
+                // Add input event for immediate feedback on text areas
+                if (fields[key].input.tagName === 'TEXTAREA') {
+                    fields[key].input.addEventListener('input', () => validateField(key));
+                }
+            }
+
+            // Add change event for select, file, and checkbox inputs
+            fields.city.input.addEventListener('change', () => validateField('city'));
+            fields.source.input.addEventListener('change', () => validateField('source'));
+            fields.resume.input.addEventListener('change', () => validateField('resume'));
+            fields.marksheet.input.addEventListener('change', () => validateField('marksheet'));
+            fields.terms.input.addEventListener('change', () => validateField('terms'));
+        });
+    </script>
+</body>
+</html> 

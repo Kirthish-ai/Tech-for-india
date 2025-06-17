@@ -1,0 +1,1335 @@
+:root {
+    --primary-color: #00aee6;
+    --secondary-color: #00aee6;
+    --accent-color: #00aee6;
+    --text-color: #222;
+    --light-bg: #f4f8fb;
+    --white: #ffffff;
+    --gray-100: #f4f8fb;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 174, 230, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo-for {
+    color: var(--primary-color);
+    font-weight: 900;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.nav-links a {
+    color: #111;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.98rem;
+    letter-spacing: 0.01em;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-bottom 0.2s;
+    display: inline-block;
+    line-height: 1.2;
+}
+.nav-links a.active, .nav-links a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: var(--white) !important;
+    padding: 0.86rem 1.9rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.08rem;
+    margin-left: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 174, 230, 0.25);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    min-height: 2.8rem;
+}
+
+.cta-button:hover {
+    background: #0095c2;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 174, 230, 0.35);
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.7rem;
+    color: var(--gray-800);
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 64, 128, 0.9), rgba(0, 64, 128, 0.9)), url('./home.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 12rem 1rem 8rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Buttons */
+.primary-button, .secondary-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.primary-button {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.secondary-button {
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    color: #111;
+}
+
+.primary-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.secondary-button:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+/* Modern Home Page Styles */
+
+/* Hero Modern */
+.hero-modern {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Added for parallax-like effect */
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+.hero-modern-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, var(--primary-color)cc 0%, var(--secondary-color)cc 100%);
+    z-index: 1;
+}
+.hero-image-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay for better text visibility */
+    z-index: 1;
+}
+.hero-modern-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white); /* Ensure text is white for contrast */
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 6rem 2rem 7rem;
+}
+.hero-modern-title {
+    font-size: 3.7rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--white); /* Changed to white */
+}
+.hero-modern-desc {
+    font-size: 1.35rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.97;
+    color: var(--white); /* Changed to white */
+}
+.hero-modern-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+.primary-button.animate, .secondary-button.animate {
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+}
+.primary-button.animate:hover, .secondary-button.animate:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(0,123,255,0.15);
+}
+
+/* Impact Section Modern */
+.impact-section-modern {
+    background: var(--light-bg);
+    padding: 5rem 1rem 4rem;
+}
+.impact-cards {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+.impact-card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,174,230,0.09);
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    min-width: 220px;
+    max-width: 260px;
+    flex: 1 1 220px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.impact-card:hover {
+    box-shadow: 0 8px 32px rgba(0,174,230,0.17);
+    transform: translateY(-6px) scale(1.03);
+}
+.impact-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+}
+.impact-card h3 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+.impact-card p {
+    color: var(--gray-700);
+    font-size: 1.08rem;
+}
+.impact-section-modern h2 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.3rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 2rem;
+}
+
+/* Modified Impact Section Modern - for about.html and general improvements */
+.impact-section-modern .impact-cards {
+    justify-content: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: stretch; /* Ensure cards in a row have equal height */
+}
+
+.impact-section-modern .impact-card {
+    min-width: 300px;
+    max-width: 48%; /* Adjusted for two columns, will be overridden for three column layouts */
+    flex: 1 1 48%; /* Adjusted for two columns, will be overridden for three column layouts */
+    padding: 3.5rem 3rem; /* Increased padding for a larger, more attractive feel */
+    box-shadow: 0 8px 24px rgba(0, 174, 230, 0.15); /* Stronger shadow */
+}
+
+.impact-section-modern .impact-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 174, 230, 0.25); /* Even stronger shadow on hover */
+    transform: translateY(-8px) scale(1.04); /* More pronounced hover effect */
+}
+
+/* Our Approach Section uses impact-cards, need to ensure three columns */
+.approach-section .impact-cards .impact-card {
+    max-width: 30%; /* Adjusted for three columns */
+    flex: 1 1 30%; /* Adjusted for three columns */
+    min-width: 280px;
+}
+
+/* Fellowship Section Modern */
+.fellowship-section-modern {
+    background: var(--white);
+    padding: 5rem 1rem 4rem;
+}
+.fellowship-modern-container {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.fellowship-modern-image {
+    flex: 1 1 350px;
+    min-width: 520px;
+    max-width: 620px;
+}
+.fellowship-modern-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0,174,230,0.10);
+}
+.fellowship-modern-content {
+    flex: 2 1 400px;
+    min-width: 320px;
+}
+.fellowship-modern-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+}
+.fellowship-modern-content > p {
+    font-size: 1.15rem;
+    color: var(--gray-700);
+    margin-bottom: 2.2rem;
+}
+.fellowship-modern-features {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+.fellowship-modern-features .feature {
+    background: var(--light-bg);
+    border-radius: 10px;
+    padding: 1.5rem 1.2rem;
+    text-align: center;
+    flex: 1 1 180px;
+    min-width: 180px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.fellowship-modern-features .feature:hover {
+    box-shadow: 0 4px 16px rgba(0,174,230,0.13);
+    transform: translateY(-3px) scale(1.03);
+}
+.fellowship-modern-features .feature i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.7rem;
+}
+.fellowship-modern-features .feature h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+.fellowship-modern-features .feature p {
+    color: var(--gray-700);
+    font-size: 1rem;
+}
+
+/* Stories Section Modern */
+.stories-section-modern {
+    background: var(--light-bg);
+    padding: 5rem 1rem 4rem;
+}
+.stories-modern-grid {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    max-width: 1200px; /* Added max-width for consistency */
+    margin-left: auto;
+    margin-right: auto;
+}
+.story-modern-card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,174,230,0.09);
+    overflow: hidden;
+    max-width: 340px;
+    min-width: 260px;
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.story-modern-card:hover {
+    box-shadow: 0 8px 32px rgba(0,174,230,0.17);
+    transform: translateY(-6px) scale(1.03);
+}
+.story-modern-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+.story-modern-content {
+    padding: 1.5rem 1.2rem 1.2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.story-modern-content h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+.story-modern-content p {
+    color: var(--gray-700);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.stories-viewall {
+    text-align: center;
+}
+.stories-viewall .secondary-button {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    padding: 0.8rem 2.2rem;
+}
+.stories-section-modern h2 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.3rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 2rem;
+}
+
+/* About Page specific adjustments for values section */
+.stories-section-modern.about-values .stories-modern-grid {
+    display: flex; 
+    flex-wrap: nowrap; /* Force cards into a single line */
+    gap: 2.5rem;
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: stretch; 
+    overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+    padding-bottom: 1rem; /* Add some padding for scrollbar visibility */
+}
+
+.stories-section-modern.about-values .story-modern-card {
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    width: 280px; 
+    min-height: 250px; 
+    padding: 2.8rem 2.2rem; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.stories-section-modern.about-values .story-modern-card .story-modern-content {
+    text-align: center;
+    padding: 0;
+}
+
+.stories-section-modern.about-values .story-modern-card .story-modern-content i {
+    font-size: 3.8rem !important; 
+    margin-bottom: 1.2rem;
+}
+
+.stories-section-modern.about-values .story-modern-card h3 {
+    font-size: 2rem !important; 
+    margin-bottom: 0.9rem;
+}
+
+.stories-section-modern.about-values .story-modern-card p {
+    font-size: 1.1rem !important; 
+}
+
+/* Footer Modern */
+.footer-content {
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -2px 12px rgba(0,174,230,0.08);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3rem 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+.footer-section {
+    flex: 1 1 220px;
+    min-width: 200px;
+}
+.footer-section h3, .footer-section a, .footer-section p {
+    color: var(--white);
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin-bottom: 0.7rem;
+}
+.footer-section ul li a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-section ul li a:hover {
+    color: #222;
+}
+.social-links a {
+    font-size: 1.7rem;
+    color: var(--white);
+    margin-right: 1rem;
+    transition: color 0.2s;
+}
+.social-links a:hover {
+    color: #222;
+}
+.footer-bottom {
+    text-align: center;
+    color: var(--white);
+    background: #0095c2;
+    padding: 1rem 0 0.5rem;
+    border-radius: 0 0 16px 16px;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Design for Modern Home */
+@media (max-width: 1024px) {
+    .main-nav {
+        padding: 1rem 1rem;
+    }
+    .fellowship-modern-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 1rem 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+    }
+    .hero-modern-title {
+        font-size: 2.2rem;
+    }
+    .hero-modern-content {
+        padding: 3rem 1rem 4rem;
+    }
+    .impact-section-modern, .fellowship-section-modern, .stories-section-modern {
+        padding: 3rem 0.5rem 2rem;
+    }
+    .footer-content {
+        border-radius: 0;
+    }
+}
+
+/* Application Form Styles */
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.form-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.form-section h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #00aee6;
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #00aee6;
+    outline: none;
+}
+
+.form-group input[type="file"] {
+    padding: 0.5rem 0;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+}
+
+.form-footer a {
+    color: #00aee6;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Rest of the original styles */
+
+/* ... (rest of the original styles remain unchanged) ... */
+
+.centered-heading {
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.3rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 2rem;
+}
+
+.approach-section {
+    background: var(--light-bg);
+    padding: 5rem 1rem 4rem;
+}
+
+.approach-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.approach-container .impact-cards {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.approach-container .impact-card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,174,230,0.09);
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    min-width: 220px;
+    max-width: 260px;
+    flex: 1 1 220px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.approach-container .impact-card:hover {
+    box-shadow: 0 8px 32px rgba(0,174,230,0.17);
+    transform: translateY(-6px) scale(1.03);
+}
+
+.approach-container .impact-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+}
+
+.approach-container .impact-card h3 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.approach-container .impact-card p {
+    color: var(--gray-700);
+    font-size: 1.08rem;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0, 174, 230, 0.15);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.8rem;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: var(--primary-color);
+}
+
+.donation-form-container {
+    text-align: center;
+}
+
+.donation-form-container h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.donation-form-container .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.donation-form-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+.donation-form-container input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.donation-form-container input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.donation-form-container .primary-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* QR Code Container Styles */
+.qr-code-container {
+    text-align: center;
+    padding: 1rem;
+}
+
+.qr-code-container h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+#qrcode {
+    display: inline-block;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+}
+
+.qr-code-container p {
+    color: var(--gray-700);
+    margin: 0.5rem 0;
+}
+
+.payment-note {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin-top: 1rem;
+}
+
+#displayAmount {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* New Donation Options Section Styles */
+.donation-options-section {
+    background: var(--white);
+    padding: 5rem 1rem 4rem;
+    text-align: center;
+}
+
+.donation-options-container {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.donation-option-card {
+    background: var(--light-bg);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 174, 230, 0.09);
+    padding: 3rem 2rem;
+    text-align: center;
+    min-width: 280px;
+    max-width: 400px;
+    flex: 1 1 45%; /* Adjusted for two columns, slightly less than 50% to allow gap */
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.donation-option-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 174, 230, 0.17);
+    transform: translateY(-6px) scale(1.02);
+}
+
+.donation-option-card .option-icon {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.donation-option-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.donation-option-card p {
+    color: var(--gray-700);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Allows paragraph to take available space */
+}
+
+.donation-option-card .primary-button {
+    padding: 0.9rem 2.2rem;
+    font-size: 1rem;
+    min-width: 150px; /* Ensure buttons have a minimum width */
+}
+
+/* Responsive adjustments for donation options */
+@media (max-width: 768px) {
+    .donation-options-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .donation-option-card {
+        max-width: 90%; /* Allow cards to take more width on smaller screens */
+    }
+}
+
+/* Contact Info Section Styles */
+.contact-info-section {
+    background: var(--light-bg);
+    padding: 5rem 1rem 4rem;
+    text-align: center;
+}
+
+.contact-info-container {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-info-card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 174, 230, 0.09);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    min-width: 280px;
+    max-width: 360px;
+    flex: 1 1 30%; /* Three columns, slightly less than 33.33% to allow gap */
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.contact-info-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 174, 230, 0.17);
+    transform: translateY(-6px) scale(1.02);
+}
+
+.contact-info-card .info-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+}
+
+.contact-info-card h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.contact-info-card p {
+    color: var(--gray-700);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-card p a {
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-info-card p a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments for contact info cards */
+@media (max-width: 992px) {
+    .contact-info-card {
+        flex: 1 1 45%; /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-info-card {
+        max-width: 90%; /* Allow cards to take more width on small screens */
+    }
+}
+
+/* Student Kits Campaign Section Styles */
+.student-kits-campaign-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0095c2 100%);
+    padding: 5rem 1rem 4rem;
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 6rem; /* Increased margin to prevent overlap with footer */
+}
+
+.student-kits-campaign-section .centered-heading {
+    color: var(--white);
+}
+
+.campaign-card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25); /* Enhanced shadow for more attractiveness */
+    padding: 4rem 3rem; /* Increased padding for a larger feel */
+    max-width: 800px; /* Increased max-width to use more space */
+    margin: 2.5rem auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.campaign-card .campaign-content {
+    color: var(--text-color);
+}
+
+.campaign-card .campaign-icon {
+    font-size: 4.5rem; /* Slightly larger icon */
+    color: var(--primary-color);
+    margin-bottom: 1.8rem;
+}
+
+.campaign-card h3 {
+    font-size: 2.5rem; /* Larger heading */
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
+
+.campaign-card p {
+    font-size: 1.2rem; /* Larger text */
+    color: var(--gray-700);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.campaign-card .form-group {
+    width: 100%;
+    max-width: 350px; /* Slightly wider input */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.campaign-card label {
+    color: var(--gray-700);
+    font-weight: 600;
+}
+
+.campaign-card input[type="number"] {
+    background: var(--light-bg);
+    border-color: var(--gray-300);
+    color: var(--text-color);
+    padding: 1rem; /* Larger input padding */
+    font-size: 1.1rem;
+}
+
+.campaign-card input[type="number"]:focus {
+    border-color: var(--primary-color);
+}
+
+.campaign-card .primary-button {
+    margin-top: 2.5rem; /* Increased margin above button */
+    padding: 1.2rem 3rem; /* Larger button padding */
+    font-size: 1.2rem; /* Larger button text */
+}
+
+/* Student Kits Progress Section Styles */
+.student-kits-progress-section {
+    background: var(--white);
+    padding: 5rem 1rem 4rem;
+    text-align: center;
+}
+
+.student-kits-progress-section .progress-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.student-kits-progress-section .centered-heading {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.student-kits-progress-section .section-description {
+    color: var(--gray-700);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.progress-bar-wrapper {
+    background-color: var(--gray-300);
+    border-radius: 25px;
+    height: 30px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-fill {
+    background-color: var(--primary-color);
+    height: 100%;
+    border-radius: 25px;
+    width: 0%; /* Initial width, will be updated by JS */
+    transition: width 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 30px; /* Vertically center text */
+    color: var(--gray-800); /* Color for text over progress bar */
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.progress-stats {
+    font-size: 1.2rem;
+    color: var(--gray-800);
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.progress-stats span {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.progress-cta .primary-button {
+    font-size: 1.1rem;
+    padding: 0.9rem 2.2rem;
+}
+
+/* Programs Page specific adjustments */
+#other-programs .impact-cards {
+    align-items: stretch; /* Ensure cards in a row have equal height */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#other-programs .impact-card {
+    padding: 3rem 2.5rem; /* Increased padding */
+    box-shadow: 0 8px 24px rgba(0, 174, 230, 0.15); /* Stronger shadow */
+    transition: box-shadow 0.3s, transform 0.3s; /* Ensure smooth transition */
+}
+
+#other-programs .impact-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 174, 230, 0.25); /* Even stronger shadow on hover */
+    transform: translateY(-6px) scale(1.03); /* More pronounced hover effect */
+}
+
+#other-programs .impact-icon {
+    font-size: 3rem; /* Slightly larger icon */
+}
+
+#other-programs .impact-card h3 {
+    font-size: 1.8rem; /* Larger heading */
+}
+
+#other-programs .impact-card p {
+    font-size: 1.05rem; /* Slightly larger text */
+}
+
+#program-stories .stories-modern-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust min-width for larger cards */
+    align-items: stretch; /* Ensure cards have equal height */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#program-stories .story-modern-card {
+    min-width: 300px; /* Ensure minimum width for cards */
+    padding: 2.5rem 2rem; /* Increased padding */
+    box-shadow: 0 8px 24px rgba(0, 174, 230, 0.15); /* Stronger shadow */
+    transition: box-shadow 0.3s, transform 0.3s; /* Ensure smooth transition */
+}
+
+#program-stories .story-modern-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 174, 230, 0.25); /* Even stronger shadow on hover */
+    transform: translateY(-6px) scale(1.03); /* More pronounced hover effect */
+}
+
+#program-stories .story-modern-content h3 {
+    font-size: 1.4rem; /* Larger heading */
+}
+
+#program-stories .story-modern-content p {
+    font-size: 1.05rem; /* Slightly larger text */
+}
+
+#program-stories .story-modern-card img {
+    height: 220px; /* Slightly taller images for larger cards */
+    object-fit: cover;
+}
+
+/* Video Section Styles (for about.html) */
+.video-section-modern {
+    background: var(--light-bg);
+    padding: 5rem 1rem 4rem;
+    text-align: center;
+}
+
+.video-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.video-container .centered-heading {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.responsive-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+}
+
+.responsive-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsive adjustments for video section */
+@media (max-width: 768px) {
+    .video-container {
+        padding: 1.5rem;
+    }
+    .video-container .centered-heading {
+        font-size: 2rem;
+    }
+}
+  

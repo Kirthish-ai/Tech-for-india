@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teach For India - Building a Movement of Leaders</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Join Teach For India to build a movement of leaders for educational equity. Learn about our Fellowship and impact." />
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const targetAmount = 100000000; // Target in Rupees
+      const collectedAmount = 25000000; // Simulated collected amount in Rupees (e.g., 25% of target)
+
+      const percentageCollected = (collectedAmount / targetAmount) * 100;
+
+      const progressBarFill = document.querySelector('.progress-bar-fill');
+      const progressBarText = document.querySelector('.progress-bar-text');
+      const collectedAmountSpan = document.getElementById('collectedAmount');
+      const targetAmountSpan = document.getElementById('targetAmount');
+
+      if (progressBarFill && progressBarText && collectedAmountSpan && targetAmountSpan) {
+        // Set initial state for animation
+        progressBarFill.style.width = '0%';
+        progressBarText.textContent = '0% Collected';
+
+        // Animate using chained requestAnimationFrame to ensure rendering
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            progressBarFill.style.width = `${percentageCollected.toFixed(2)}%`;
+            progressBarText.textContent = `${percentageCollected.toFixed(0)}% Collected`;
+          });
+        });
+        
+        collectedAmountSpan.textContent = `₹${collectedAmount.toLocaleString('en-IN')}`;
+        targetAmountSpan.textContent = `₹${targetAmount.toLocaleString('en-IN')}`;
+      }
+
+      // Note: In a real application, collectedAmount would be fetched from a backend database.
+      // This is a static representation for demonstration purposes.
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <div class="logo">
+        <span class="logo-text">TEACH<span class="logo-for">FOR</span>INDIA</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="impact.html">Our Impact</a>
+        <a href="join.html">Join Us</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="applynow.html" class="cta-button">Apply Now</a>
+      </div>
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-modern" style="background-image: url('./home.png');">
+      <div class="hero-image-overlay"></div>
+      <div class="hero-modern-content">
+        <h1 class="hero-modern-title">Building a Movement of Leaders</h1>
+        <p class="hero-modern-desc">Join a network of 4,500+ Fellows across India who are working to ensure all children attain an excellent education.</p>
+        <div class="hero-modern-buttons">
+          <a href="applynow.html" class="primary-button animate">Apply for Fellowship</a>
+          <a href="programs.html" class="secondary-button animate">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Kits Progress Section -->
+    <section class="student-kits-progress-section">
+      <div class="progress-container">
+        <h2 class="centered-heading">Our Progress: 100 Million Student Kits Campaign</h2>
+        <p class="section-description centered-text">Every kit brings us closer to empowering students across India. See how far we've come!</p>
+        <div class="progress-bar-wrapper">
+          <div class="progress-bar-fill" style="width: 0%;"></div>
+          <div class="progress-bar-text">0% Collected</div>
+        </div>
+        <div class="progress-stats">
+          <span id="collectedAmount">₹0</span> collected out of <span id="targetAmount">₹100,000,000</span>
+        </div>
+        <div class="progress-cta">
+          <a href="donate.html?action=donateForKits" class="primary-button animate">Donate for Kits</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section-modern">
+      <div class="impact-container">
+        <h2>Our Impact</h2>
+        <div class="impact-cards">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h3>89%</h3>
+            <p>Grade 10 Students graduated successfully in 2023</p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-users"></i></div>
+            <h3>4,500+</h3>
+            <p>Fellows across India</p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-child"></i></div>
+            <h3>1M+</h3>
+            <p>Children impacted</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fellowship Section -->
+    <section class="fellowship-section-modern">
+      <div class="fellowship-modern-container">
+        <div class="fellowship-modern-image">
+          <img src="./fellowship.png" alt="Teach For India Fellowship" />
+        </div>
+        <div class="fellowship-modern-content">
+          <h2>The Fellowship</h2>
+          <p>A two-year, full-time, paid leadership development program that places outstanding college graduates and young professionals in low-income schools to teach full-time.</p>
+          <div class="fellowship-modern-features">
+            <div class="feature">
+              <i class="fas fa-graduation-cap"></i>
+              <h3>Leadership Development</h3>
+              <p>Develop skills and mindsets to lead effectively in any sector</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <h3>Classroom Experience</h3>
+              <p>Gain hands-on teaching experience in low-income schools</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-users"></i>
+              <h3>Network Building</h3>
+              <p>Join a network of leaders working towards educational equity</p>
+            </div>
+          </div>
+          <a href="programs.html" class="primary-button">Learn more about the Fellowship</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fellow Stories -->
+    <section class="stories-section-modern">
+      <div class="stories-container">
+        <h2>Fellow Stories</h2>
+        <div class="stories-modern-grid">
+          <div class="story-modern-card">
+            <img src="./Saurabh.png" alt="Fellow Story">
+            <div class="story-modern-content">
+              <h3>Saurabh</h3>
+              <p>"As Teach For India Fellows, we are part of a powerful network of leaders, teachers and edupreneurs who are shaping India's future."</p>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+          <div class="story-modern-card">
+            <img src="./Riddhi.png" alt="Fellow Story">
+            <div class="story-modern-content">
+              <h3>Riddhi</h3>
+              <p>"Helping India's children get the excellent education they deserve is the most important thing we could be doing with our time. We teach, we learn, we change India."</p>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+          <div class="story-modern-card">
+            <img src="./Nandini.png" alt="Fellow Story">
+            <div class="story-modern-content">
+              <h3>Nandini</h3>
+              <p>"Through the Fellowship, we cultivate knowledge, skills and mindsets needed to attain positions of leadership."</p>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+          <div class="story-modern-card">
+            <img src="./Downy.png" alt="Fellow Story">
+            <div class="story-modern-content">
+              <h3>Dawny</h3>
+              <p>"Teach For India Fellows have gone into hundreds of under-resourced schools in India, with palpable positive impact. You, too, can follow in their footsteps."</p>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="stories-viewall">
+          <a href="programs.html#stories" class="secondary-button">View All Stories</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Teach For India is a non-profit organization that aims to eliminate educational inequity in India by building a movement of leaders.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="join.html">Join Us</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i> info@teachforindia.org</p>
+        <p><i class="fas fa-phone"></i> +91 1234567890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Teach For India. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

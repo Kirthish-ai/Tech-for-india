@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate - Teach For India</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    // Wait for the page to load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Modal functionality
+      window.openDonationModal = function() {
+        const modal = document.getElementById('donationModal');
+        if (modal) {
+          modal.style.display = 'flex';
+        }
+      }
+
+      window.closeDonationModal = function() {
+        const modal = document.getElementById('donationModal');
+        const form = document.getElementById('donationForm');
+        const qrContainer = document.getElementById('qrCodeContainer');
+        const qrcode = document.getElementById('qrcode');
+        
+        if (modal) modal.style.display = 'none';
+        if (form) form.style.display = 'block';
+        if (qrContainer) qrContainer.style.display = 'none';
+        if (qrcode) qrcode.innerHTML = '';
+        // Reset form fields
+        document.getElementById('donationAmount').value = '';
+        document.getElementById('donorName').value = '';
+        document.getElementById('donorEmail').value = '';
+      }
+
+      // QR Code generation
+      window.generateQR = function(event) {
+        if (event) event.preventDefault(); // Only prevent default if called from an event (form submission)
+        
+        const amount = document.getElementById('donationAmount').value || document.getElementById('kitDonationAmount').value; // Use kit amount if main amount is empty
+        const name = document.getElementById('donorName').value || "Anonymous Donor"; // Default name if not provided
+        const email = document.getElementById('donorEmail').value || "anon@example.com"; // Default email if not provided
+
+        if (!amount) {
+          alert('Please enter a donation amount.');
+          return;
+        }
+        
+        // Create UPI payment link
+        const upiLink = `upi://pay?pa=teachforindia@upi&pn=TeachForIndia&am=${amount}&cu=INR&tn=Donation from ${name}`;
+        
+        // Clear previous QR code
+        const qrcodeElement = document.getElementById('qrcode');
+        qrcodeElement.innerHTML = '';
+        
+        // Generate QR Code
+        try {
+          new QRCode(qrcodeElement, {
+            text: upiLink,
+            width: 200,
+            height: 200
+          });
+
+          // Hide donation form and show QR code container
+          document.getElementById('donationForm').style.display = 'none';
+          document.getElementById('qrCodeContainer').style.display = 'block';
+          document.getElementById('displayAmount').textContent = amount;
+
+          console.log(`Donation of ₹${amount} for kits from ${name}`);
+
+        } catch (error) {
+          console.error('Error generating QR code:', error);
+          alert('There was an error generating the QR code. Please try again.');
+        }
+      }
+
+      // Open donation modal from Kit Donation section
+      window.openKitDonationModal = function() {
+        const kitAmountInput = document.getElementById('kitDonationAmount');
+        const donationAmountInput = document.getElementById('donationAmount');
+        
+        if (kitAmountInput && kitAmountInput.value) {
+          donationAmountInput.value = kitAmountInput.value; // Pre-fill main modal amount
+          openDonationModal(); // Open the modal
+          generateQR(); // Immediately generate QR code
+        } else {
+          openDonationModal(); // Open modal normally if no kit amount
+        }
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        const modal = document.getElementById('donationModal');
+        if (event.target == modal) {
+          closeDonationModal();
+        }
+      }
+
+      // Check for URL parameters to auto-open modal
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('action') === 'donateForKits') {
+        openKitDonationModal();
+      }
+    });
+  </script>
+  <style>
+    /* Add this to your existing styles */
+    .hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+        font-size: 1.2em;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <div class="logo">
+        <span class="logo-text">TEACH<span class="logo-for">FOR</span>INDIA</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="impact.html">Our Impact</a>
+        <a href="join.html">Join Us</a>
+        <a href="donate.html" class="active">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="applynow.html" class="cta-button">Apply Now</a>
+      </div>
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-modern" style="background-image: url('./donate.png');">
+      <div class="hero-image-overlay"></div>
+      <div class="hero-modern-content">
+        <h1 class="hero-modern-title">Support Our Mission</h1>
+        <p class="hero-modern-desc">Your contribution can help us reach more children and create lasting change</p>
+      </div>
+    </section>
+
+    <!-- Donation Impact Section -->
+    <section class="impact-section-modern">
+      <h2 class="centered-heading">Your Impact</h2>
+      <div class="impact-cards">
+        <div class="impact-card">
+          <div class="impact-icon"><i class="fas fa-book"></i></div>
+          <h3 class="centered-text">Education</h3>
+          <p class="centered-text">Support quality education for underprivileged children</p>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3 class="centered-text">Teachers</h3>
+          <p class="centered-text">Train and support dedicated teachers in low-income schools</p>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon"><i class="fas fa-school"></i></div>
+          <h3 class="centered-text">Schools</h3>
+          <p class="centered-text">Transform schools into centers of excellence</p>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon"><i class="fas fa-users"></i></div>
+          <h3 class="centered-text">Communities</h3>
+          <p class="centered-text">Build stronger communities through education</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donation Options Section -->
+    <section class="donation-options-section">
+      <h2 class="centered-heading">Choose Your Way to Give</h2>
+      <div class="donation-options-container">
+        <div class="donation-option-card">
+          <div class="option-icon"><i class="fas fa-hand-holding-usd"></i></div>
+          <h3>One-Time Donation</h3>
+          <p>Make a single contribution to support our ongoing initiatives. Your immediate impact is invaluable.</p>
+          <button class="primary-button animate" onclick="openDonationModal()">Donate Once</button>
+        </div>
+        <div class="donation-option-card">
+          <div class="option-icon"><i class="fas fa-sync-alt"></i></div>
+          <h3>Monthly Giving (EMI)</h3>
+          <p>Set up a recurring monthly donation for sustained impact. A small amount, consistently, makes a big difference.</p>
+          <button class="primary-button animate" onclick="openDonationModal()">Set Up Auto-Pay</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ways to Give Section -->
+    <section class="fellowship-section-modern">
+      <div class="fellowship-modern-container" style="width:100%">
+        <div class="fellowship-modern-content">
+          <h2>Ways to Give</h2>
+          <div class="fellowship-modern-features">
+            <div class="feature">
+              <i class="fas fa-hand-holding-usd"></i>
+              <h3>One-Time Donation</h3>
+              <p>Make a one-time contribution to support our work</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-sync-alt"></i>
+              <h3>Monthly Giving</h3>
+              <p>Set up recurring monthly donations for sustained impact</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-building"></i>
+              <h3>Corporate Giving</h3>
+              <p>Partner with us through corporate social responsibility</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits of Giving Section -->
+    <section class="impact-section-modern">
+      <div class="impact-container">
+        <h2>Benefits of Giving</h2>
+        <div class="impact-cards">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-file-invoice"></i></div>
+            <h3>Tax Benefits</h3>
+            <p>50% tax exemption under Section 80G of the Income Tax Act</p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Impact Reports</h3>
+            <p>Regular updates on how your contribution creates change</p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-users"></i></div>
+            <h3>Community</h3>
+            <p>Join our network of supporters and change-makers</p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Recognition</h3>
+            <p>Special recognition for significant contributions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="stories-section-modern">
+      <div class="stories-container">
+        <h2>Ready to Make a Difference?</h2>
+        <div class="stories-modern-grid">
+          <div class="story-modern-card" style="max-width: 100%; text-align: center;">
+            <div class="story-modern-content">
+              <p>Your contribution can help us reach more children and create lasting change in India\'s education system.</p>
+              <div class="hero-modern-buttons" style="justify-content: center;">
+                <a href="#" class="primary-button animate" onclick="openDonationModal()">Donate Now</a>
+                <a href="contact.html" class="secondary-button animate">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Kits Campaign Section -->
+    <section class="student-kits-campaign-section">
+      <h2 class="centered-heading">Help Us Reach Our Goal!</h2>
+      <div class="campaign-card">
+        <div class="campaign-content">
+          <div class="campaign-icon"><i class="fas fa-boxes"></i></div>
+          <h3>100 Million Student Kits Required for a College</h3>
+          <p>Your donation provides essential learning materials, books, and resources, directly impacting students\' educational journeys.</p>
+          <p>Every kit helps us empower a student for a brighter future. Join us in transforming lives!</p>
+          <div class="form-group" style="margin-top: 1.5rem;">
+            <label for="kitDonationAmount">Enter Donation Amount (₹)</label>
+            <input type="number" id="kitDonationAmount" name="kitDonationAmount" min="100" step="100" placeholder="e.g., 500, 1000" required>
+          </div>
+          <button class="primary-button animate" onclick="openKitDonationModal()">Donate for Kits</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Donation Modal -->
+  <div id="donationModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeDonationModal()">&times;</span>
+      <div class="donation-form-container">
+        <h2>Make Your Donation</h2>
+        <form id="donationForm" onsubmit="generateQR(event)">
+          <div class="form-group">
+            <label for="donationAmount">Donation Amount (₹)</label>
+            <input type="number" id="donationAmount" name="donationAmount" min="100" step="100" required>
+          </div>
+          <div class="form-group">
+            <label for="donorName">Your Name</label>
+            <input type="text" id="donorName" name="donorName" required>
+          </div>
+          <div class="form-group">
+            <label for="donorEmail">Email Address</label>
+            <input type="email" id="donorEmail" name="donorEmail" required>
+          </div>
+          <button type="submit" class="primary-button">Confirm Donation</button>
+        </form>
+      </div>
+      <div id="qrCodeContainer" class="qr-code-container" style="display: none;">
+        <h3>Scan QR Code to Complete Payment</h3>
+        <div id="qrcode"></div>
+        <p>Amount to Pay: ₹<span id="displayAmount">0</span></p>
+        <p class="payment-note">Scan this QR code with your UPI app to complete the payment</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Teach For India is a non-profit organization that aims to eliminate educational inequity in India by building a movement of leaders.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="join.html">Join Us</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i> info@teachforindia.org</p>
+        <p><i class="fas fa-phone"></i> +91 1234567890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Teach For India. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
